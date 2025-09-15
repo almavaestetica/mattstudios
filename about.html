@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - MattStudios</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .minecraft-font { font-family: 'Orbitron', monospace; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .minecraft-green { background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); }
+        .minecraft-blue { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); }
+        .minecraft-purple { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
+        
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glow { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+        .hover-glow:hover { box-shadow: 0 0 30px rgba(139, 92, 246, 0.5); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-['Inter']">
+    <!-- Header -->
+    <header class="gradient-bg shadow-2xl">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://mattstudios.online" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                    <img src="logo.png" alt="MattStudios Logo" class="w-12 h-12 rounded-lg glow" onerror="this.src=''; this.alt='Logo no disponible'; this.style.display='none';">
+                    <h1 class="minecraft-font text-3xl font-bold text-white">MattStudios</h1>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#historia" class="hover:text-green-400 transition-colors font-medium">Historia</a>
+                    <a href="#mision" class="hover:text-green-400 transition-colors font-medium">Misión</a>
+                    <a href="#equipo" class="hover:text-green-400 transition-colors font-medium">Equipo</a>
+                    <a href="#contacto" class="hover:text-green-400 transition-colors font-medium">Contacto</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="floating mb-8">
+                    <div class="inline-block p-4 minecraft-purple rounded-2xl glow">
+                        <span class="text-6xl">🏢</span>
+                    </div>
+                </div>
+                <h2 class="minecraft-font text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+                    Sobre MattStudios
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                    Conoce la historia detrás del estudio que está revolucionando los eventos de Minecraft. 
+                    <span class="text-green-400 font-semibold">Pasión, creatividad y comunidad</span> son nuestros pilares fundamentales.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia Section -->
+    <section id="historia" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h3 class="minecraft-font text-4xl font-bold mb-4">Nuestra Historia</h3>
+                    <p class="text-xl text-gray-400">El viaje que nos llevó a ser líderes en eventos de Minecraft</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gray-800 rounded-2xl p-8 hover-glow transition-all">
+                        <h4 class="minecraft-font text-2xl font-bold mb-4 text-green-400">Los Inicios (2022)</h4>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            MattStudios nació de la pasión por Minecraft y el deseo de crear experiencias únicas. Todo comenzó cuando un grupo de amigos decidió recrear su serie favorita en el juego.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Lo que empezó como un proyecto personal se convirtió rápidamente en algo mucho más grande cuando la comunidad comenzó a pedir más contenido.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-8 hover-glow transition-all">
+                        <h4 class="minecraft-font text-2xl font-bold mb-4 text-blue-400">El Crecimiento (2023)</h4>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Durante nuestro segundo año, expandimos nuestro equipo y comenzamos a trabajar en proyectos más ambiciosos. Recreamos más de 15 series diferentes y organizamos eventos masivos.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            La comunidad creció exponencialmente, alcanzando más de 1000 jugadores activos que participan regularmente en nuestros eventos.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-2xl p-8 text-center">
+                    <h4 class="minecraft-font text-2xl font-bold mb-4 text-purple-400">El Presente (2024)</h4>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Hoy somos reconocidos como uno de los estudios más innovadores en la creación de eventos de Minecraft. 
+                        Continuamos expandiendo nuestros horizontes, siempre manteniendo la calidad y creatividad que nos caracteriza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión Section -->
+    <section id="mision" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h3 class="minecraft-font text-4xl font-bold mb-4">Misión y Visión</h3>
+                    <p class="text-xl text-gray-400">Los valores que guían cada uno de nuestros proyectos</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl p-8 border border-green-500/30">
+                        <div class="minecraft-green w-16 h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-3xl">🎯</span>
+                        </div>
+                        <h4 class="minecraft-font text-2xl font-bold mb-4 text-center text-green-400">Nuestra Misión</h4>
+                        <p class="text-gray-300 text-center leading-relaxed">
+                            Crear experiencias únicas e inolvidables en Minecraft que unan a las comunidades y transformen ideas creativas en realidades interactivas y emocionantes.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl p-8 border border-blue-500/30">
+                        <div class="minecraft-blue w-16 h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-3xl">🚀</span>
+                        </div>
+                        <h4 class="minecraft-font text-2xl font-bold mb-4 text-center text-blue-400">Nuestra Visión</h4>
+                        <p class="text-gray-300 text-center leading-relaxed">
+                            Ser el estudio líder mundial en la creación de eventos y experiencias de Minecraft, estableciendo nuevos estándares de calidad y creatividad en la industria.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-2xl p-8">
+                    <h4 class="minecraft-font text-2xl font-bold mb-6 text-center">Nuestros Valores</h4>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">💡</div>
+                            <h5 class="font-bold text-lg mb-2 text-yellow-400">Creatividad</h5>
+                            <p class="text-gray-300 text-sm">Innovamos constantemente para ofrecer experiencias únicas</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">🤝</div>
+                            <h5 class="font-bold text-lg mb-2 text-green-400">Comunidad</h5>
+                            <p class="text-gray-300 text-sm">Valoramos y escuchamos a nuestra comunidad en cada proyecto</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">⭐</div>
+                            <h5 class="font-bold text-lg mb-2 text-purple-400">Excelencia</h5>
+                            <p class="text-gray-300 text-sm">Mantenemos los más altos estándares de calidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo Section -->
+    <section id="equipo" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="minecraft-font text-4xl font-bold mb-8">Nuestro Equipo</h3>
+                <p class="text-xl text-gray-400 mb-12">Los creativos detrás de cada evento épico</p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-gray-800 rounded-2xl p-6 hover-glow transition-all transform hover:scale-105">
+                        <div class="w-20 h-20 minecraft-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">👑</span>
+                        </div>
+                        <h4 class="minecraft-font text-xl font-bold mb-2">Fundadores</h4>
+                        <p class="text-gray-300 text-sm">Los visionarios que iniciaron esta aventura</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 hover-glow transition-all transform hover:scale-105">
+                        <div class="w-20 h-20 minecraft-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🎨</span>
+                        </div>
+                        <h4 class="minecraft-font text-xl font-bold mb-2">Diseñadores</h4>
+                        <p class="text-gray-300 text-sm">Expertos en construcción y diseño de mundos</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 hover-glow transition-all transform hover:scale-105">
+                        <div class="w-20 h-20 minecraft-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">⚙️</span>
+                        </div>
+                        <h4 class="minecraft-font text-xl font-bold mb-2">Desarrolladores</h4>
+                        <p class="text-gray-300 text-sm">Especialistas en mecánicas y sistemas de juego</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-2xl p-8">
+                    <h4 class="minecraft-font text-2xl font-bold mb-4">¿Quieres unirte al equipo?</h4>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Siempre estamos buscando talento creativo y apasionado por Minecraft. Si tienes habilidades en construcción, 
+                        diseño, programación o simplemente una gran creatividad, ¡nos encantaría conocerte!
+                    </p>
+                    <a href="#contacto" class="minecraft-green px-8 py-3 rounded-xl font-bold hover-glow transition-all transform hover:scale-105 inline-block">
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logros Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="minecraft-font text-4xl font-bold mb-8">Nuestros Logros</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl p-6 border border-green-500/30">
+                        <div class="text-4xl font-black minecraft-font text-green-400 mb-2">50+</div>
+                        <p class="text-gray-300">Eventos Realizados</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl p-6 border border-blue-500/30">
+                        <div class="text-4xl font-black minecraft-font text-blue-400 mb-2">15+</div>
+                        <p class="text-gray-300">Series Recreadas</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-2xl p-6 border border-purple-500/30">
+                        <div class="text-4xl font-black minecraft-font text-purple-400 mb-2">1000+</div>
+                        <p class="text-gray-300">Jugadores Activos</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 rounded-2xl p-6 border border-yellow-500/30">
+                        <div class="text-4xl font-black minecraft-font text-yellow-400 mb-2">2</div>
+                        <p class="text-gray-300">Años de Experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h3 class="minecraft-font text-4xl font-bold mb-6">¿Quieres saber más?</h3>
+                <p class="text-xl text-gray-200 mb-8">
+                    Únete a nuestra comunidad y mantente al día con todas las novedades de MattStudios.
+                </p>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">📧</span>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-gray-300">mattnetwork.oficial@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">💬</span>
+                            <div>
+                                <p class="font-semibold">Discord</p>
+                                <a href="https://dcd.gg/mattstudios" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">Click para ir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://mattstudios.online" class="minecraft-green px-10 py-4 rounded-xl font-bold text-lg hover-glow transition-all transform hover:scale-105 inline-block">
+                    Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <a href="https://mattstudios.online" class="flex items-center justify-center space-x-3 mb-4 hover:opacity-80 transition-opacity">
+                <img src="logo.png" alt="MattStudios Logo" class="w-8 h-8 rounded-lg" onerror="this.src=''; this.alt='Logo no disponible'; this.style.display='none';">
+                <span class="minecraft-font text-xl font-bold">MattStudios</span>
+            </a>
+            
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.tiktok.com/@mattstudiomc?lang=es-419" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="tiktok.png" alt="TikTok" class="w-10 h-10 rounded-full" onerror="this.src=''; this.alt='TikTok no disponible'; this.style.display='none';">
+                </a>
+                <a href="https://www.instagram.com/mattstudiomc/" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="instagram.png" alt="Instagram" class="w-10 h-10 rounded-full" onerror="this.src=''; this.alt='Instagram no disponible'; this.style.display='none';">
+                </a>
+                <a href="https://x.com/MattStudios22" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="twitter.png" alt="X (Twitter)" class="w-10 h-10 rounded-full" onerror="this.src=''; this.alt='X no disponible'; this.style.display='none';">
+                </a>
+            </div>
+            
+            <p class="text-gray-400">© 2024 MattStudios. Creando experiencias épicas en Minecraft desde 2022.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('backdrop-blur-sm', 'bg-opacity-95');
+            } else {
+                header.classList.remove('backdrop-blur-sm', 'bg-opacity-95');
+            }
+        });
+
+        // Button interactions
+        document.querySelectorAll('button, a[href^="#"]').forEach(element => {
+            element.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97fb2cd7f7829540',t:'MTc1Nzk3MTMwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
