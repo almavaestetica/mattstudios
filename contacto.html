@@ -33,66 +33,118 @@
   <style>body { box-sizing: border-box; }</style>
  </head>
  <body class="h-full">
-  <div id="app" class="w-full h-full overflow-auto bg-[#0a0a0f] text-white bg-grid">
-   <!-- Navbar -->
+  <div id="app" class="w-full h-full overflow-auto bg-[#0a0a0f] text-white bg-grid"><!-- Navbar -->
    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-[#0a0a0f]/80 border-b border-purple-500/10">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-     <div class="flex items-center gap-3"><img src="logo.png" alt="MattStudios Logo" class="w-9 h-9 rounded-lg object-cover"> <span id="nav-name" class="font-bold text-lg">MattStudios</span>
+     <div class="flex items-center gap-3">
+      <img src="logo.png" alt="MattStudios Logo" class="w-9 h-9 rounded-lg object-cover"> <span id="nav-name" class="font-bold text-lg">MattStudios</span>
      </div>
-     <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
-      <button onclick="showPage('home')" class="hover:text-purple-400 transition">Inicio</button> <button onclick="showPage('anuncios')" class="hover:text-purple-400 transition">Anuncios</button> <button onclick="showPage('contact')" class="hover:text-purple-400 transition">Contacto</button>
+     <div class="hidden md:flex items-center gap-8 text-sm text-gray-400"><a href="https://mattstudios.lat" class="hover:text-purple-400 transition opacity-0 animate-fade-in">Inicio</a> <a href="https://mattstudios.lat/servicio" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.1s">Servicios</a> <a href="https://mattstudios.lat/acerca-de" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.2s">Experiencia</a> <a href="https://mattstudios.lat/contact" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.3s">Contacto</a> <a href="https://mattstudios.lat/anuncios" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.4s">Anuncios</a>
      </div>
     </div>
-   </nav>
-   <div id="page-router">
-    <!-- Home Page -->
-    <section id="home" class="min-h-[100%] py-24 px-6">
-     <div class="max-w-4xl mx-auto text-center pt-12">
-      <h1 class="text-5xl md:text-7xl font-900 mb-6 gradient-text">Bienvenido a MattStudios</h1>
-      <p class="text-gray-400 text-lg mb-12">Creando experiencias épicas en Minecraft</p>
-     </div>
-    </section><!-- Anuncios Page -->
-    <section id="anuncios" class="min-h-[100%] py-24 px-6" style="display:none;">
-     <div class="max-w-4xl mx-auto">
-      <h1 class="text-5xl md:text-6xl font-900 mb-6 gradient-text">Anuncios</h1>
-      <p class="text-gray-400 text-lg mb-12">Mantente al tanto de todos nuestros eventos y noticias.</p>
-     </div>
-    </section><!-- Contact Page -->
-    <section id="contact" class="min-h-[100%] py-24 px-6" style="display:none;">
-     <div class="max-w-2xl mx-auto pt-12">
-      <h1 class="text-5xl md:text-6xl font-900 mb-6 gradient-text">Contacto</h1>
-      <p class="text-gray-400 text-lg mb-12">¿Tienes preguntas? Contáctanos por cualquiera de estos medios.</p><!-- Contactos -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12"><a id="email-card" href="mailto:mattnetwork.oficial@gmail.com" class="bg-[#12121a] border border-purple-500/20 rounded-xl p-6 card-hover text-center hover:border-purple-500/40 transition"> <i data-lucide="mail" class="w-8 h-8 text-purple-400 mx-auto mb-3"></i> <h3 class="font-800 text-lg mb-2">Email</h3><p id="email-text" class="text-gray-400 text-sm break-all">mattnetwork.oficial@gmail.com</p></a> <a id="whatsapp-card" href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="bg-[#12121a] border border-purple-500/20 rounded-xl p-6 card-hover text-center hover:border-purple-500/40 transition"> <i data-lucide="phone" class="w-8 h-8 text-green-400 mx-auto mb-3"></i> <h3 class="font-800 text-lg mb-2">WhatsApp</h3><p id="whatsapp-text" class="text-gray-400 text-sm">+1234567890</p></a> <a id="discord-card" href="https://dcd.gg/mattstudios" target="_blank" rel="noopener noreferrer" class="bg-[#12121a] border border-purple-500/20 rounded-xl p-6 card-hover text-center hover:border-purple-500/40 transition"> <i data-lucide="users" class="w-8 h-8 text-indigo-400 mx-auto mb-3"></i> <h3 class="font-800 text-lg mb-2">Discord</h3><p class="text-gray-400 text-sm">Servidor Oficial</p></a>
-      </div><!-- Formulario pequeño -->
-      <div class="bg-[#12121a] border border-purple-500/20 rounded-xl p-8">
-       <h2 class="text-2xl font-800 mb-6">Formulario de Consulta</h2>
-       <form id="contact-form" onsubmit="handleFormSubmit(event)">
-        <div class="mb-4"><label for="name" class="block text-sm font-semibold mb-2">Nombre</label> <input type="text" id="name" name="name" required class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition">
-        </div>
-        <div class="mb-4"><label for="email" class="block text-sm font-semibold mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition">
-        </div>
-        <div class="mb-4"><label for="type" class="block text-sm font-semibold mb-2">Tipo</label> <select id="type" name="type" required class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500 transition"> <option value="">Selecciona...</option> <option value="asistencia">Asistencia</option> <option value="reporte">Reporte</option> <option value="otro">Otro</option> </select>
-        </div>
-        <div class="mb-4"><label for="message" class="block text-sm font-semibold mb-2">Mensaje</label> <textarea id="message" name="message" required rows="4" class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
-        </div>
-        <div id="form-status" class="mb-4 text-sm hidden"></div><button type="submit" class="glow-btn px-6 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold text-sm w-full">Enviar</button>
-       </form>
+   </nav><!-- Determinar qué página mostrar -->
+   <div id="page-router"><!-- Anuncios Page -->
+<!-- Contacto Page -->
+<section id="contact" class="min-h-[100%] py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    
+    <h1 class="text-5xl md:text-6xl font-900 mb-6 gradient-text">Contacto</h1>
+    <p class="text-gray-400 text-lg mb-12 leading-relaxed">
+      ¿Tienes dudas, quieres participar o reportar algo? Contáctanos directamente o envíanos un mensaje usando el formulario.
+    </p>
+
+    <!-- Opciones de contacto -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+
+      <!-- WhatsApp -->
+      <div class="bg-[#12121a] border border-green-500/20 rounded-2xl p-6 text-center card-hover">
+        <div class="text-3xl mb-3">📱</div>
+        <h3 class="font-bold text-lg mb-2">WhatsApp</h3>
+        <p class="text-gray-500 text-sm mb-4">Contáctanos rápidamente</p>
+        <a href="https://wa.me/51977470675" target="_blank"
+          class="inline-block px-4 py-2 rounded-lg bg-green-600/20 text-green-300 hover:bg-green-600/30 transition text-sm">
+          Escribir →
+        </a>
       </div>
+
+      <!-- Email -->
+      <div class="bg-[#12121a] border border-purple-500/20 rounded-2xl p-6 text-center card-hover">
+        <div class="text-3xl mb-3">📧</div>
+        <h3 class="font-bold text-lg mb-2">Email</h3>
+        <p id="contact-email" class="text-gray-500 text-sm mb-4">mattnetwork.oficial@gmail.com</p>
+        <a href="mailto:mattnetwork.oficial@gmail.com"
+          class="inline-block px-4 py-2 rounded-lg bg-purple-600/20 text-purple-300 hover:bg-purple-600/30 transition text-sm">
+          Enviar correo →
+        </a>
+      </div>
+
+      <!-- Redes -->
+      <div class="bg-[#12121a] border border-blue-500/20 rounded-2xl p-6 text-center card-hover">
+        <div class="text-3xl mb-3">🌐</div>
+        <h3 class="font-bold text-lg mb-2">Redes</h3>
+        <p class="text-gray-500 text-sm mb-4">Síguenos</p>
+        <div class="flex justify-center gap-3 text-sm">
+          <a href="https://www.instagram.com/mattstudiomc/" target="_blank" class="text-blue-300 hover:underline">Instagram</a>
+          <a href="https://x.com/MattStudios22" target="_blank" class="text-blue-300 hover:underline">X</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Formulario -->
+    <div class="bg-[#12121a] border border-purple-500/20 rounded-2xl p-8">
+      <h2 class="text-2xl font-800 mb-6">Formulario de Asistencia / Reporte</h2>
+
+      <form class="space-y-4">
+
+        <input type="text" placeholder="Tu nombre"
+          class="w-full p-3 rounded-lg bg-[#0a0a0f] border border-purple-500/20 focus:outline-none focus:border-purple-500 text-sm">
+
+        <input type="email" placeholder="Tu email"
+          class="w-full p-3 rounded-lg bg-[#0a0a0f] border border-purple-500/20 focus:outline-none focus:border-purple-500 text-sm">
+
+        <select
+          class="w-full p-3 rounded-lg bg-[#0a0a0f] border border-purple-500/20 focus:outline-none focus:border-purple-500 text-sm">
+          <option>Selecciona tipo</option>
+          <option>Asistencia</option>
+          <option>Reporte</option>
+          <option>Consulta</option>
+        </select>
+
+        <textarea rows="4" placeholder="Escribe tu mensaje..."
+          class="w-full p-3 rounded-lg bg-[#0a0a0f] border border-purple-500/20 focus:outline-none focus:border-purple-500 text-sm"></textarea>
+
+        <button type="submit"
+          class="glow-btn px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold text-sm">
+          Enviar mensaje →
+        </button>
+
+      </form>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border border-purple-500/20 rounded-2xl p-8">
+      <h2 class="text-2xl font-800 mb-4">¿Prefieres Discord?</h2>
+      <p class="text-gray-400 mb-6">Únete a nuestra comunidad para soporte más rápido.</p>
+      <a href="https://dcd.gg/mattstudios" target="_blank"
+        class="inline-block glow-btn px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold text-sm">
+        Ir a Discord →
+      </a>
+    </div>
+
+  </div>
+</section>
+   </div><!-- Footer -->
+   <footer class="border-t border-purple-500/10 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+     <div class="flex items-center gap-3"><img src="logo.png" alt="MattStudios Logo" class="w-8 h-8 rounded-lg object-cover"> <span id="footer-name" class="font-bold">MattStudios</span>
      </div>
-    </section>
-   </div>
-  </div><!-- Footer -->
-  <footer class="border-t border-purple-500/10 py-10 px-6">
-   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-    <div class="flex items-center gap-3">
-     <img src="logo.png" alt="MattStudios Logo" class="w-8 h-8 rounded-lg object-cover"> <span id="footer-name" class="font-bold">MattStudios</span>
+     <div class="flex gap-6 text-gray-500 text-sm"><a href="https://www.tiktok.com/@mattstudiomc?lang=es-419" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">TikTok</a> <a href="https://www.instagram.com/mattstudiomc/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Instagram</a> <a href="https://x.com/MattStudios22" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">X (Twitter)</a>
+     </div>
     </div>
-    <div class="flex gap-6 text-gray-500 text-sm">
-     <a href="https://www.tiktok.com/@mattstudiomc?lang=es-419" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">TikTok</a> <a href="https://www.instagram.com/mattstudiomc/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Instagram</a> <a href="https://x.com/MattStudios22" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">X (Twitter)</a>
-    </div>
-   </div>
-   <p class="text-center text-gray-600 text-xs mt-8">© 2025 MattStudios. Creando experiencias épicas en Minecraft desde 2022.</p>
-  </footer>
+    <p class="text-center text-gray-600 text-xs mt-8">© 2025 MattStudios. Creando experiencias épicas en Minecraft desde 2022.</p>
+   </footer>
+  </div>
   <script>
     lucide.createIcons();
 
@@ -101,8 +153,6 @@
       hero_title: 'Eventos de Minecraft',
       hero_description: 'Recreamos series y creamos eventos únicos en Minecraft con un toque especial y creativo. 3 años de experiencia transformando ideas en realidades pixeladas.',
       contact_email: 'mattnetwork.oficial@gmail.com',
-      contact_whatsapp: '+1234567890',
-      contact_discord: 'https://dcd.gg/mattstudios',
       background_color: '#0a0a0f',
       card_color: '#12121a',
       text_color: '#ffffff',
@@ -112,68 +162,26 @@
       font_size: 16
     };
 
-    function showPage(page) {
-      document.getElementById('home').style.display = page === 'home' ? 'block' : 'none';
-      document.getElementById('anuncios').style.display = page === 'anuncios' ? 'block' : 'none';
-      document.getElementById('contact').style.display = page === 'contact' ? 'block' : 'none';
-    }
-
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      const form = document.getElementById('contact-form');
-      const statusDiv = document.getElementById('form-status');
-      const submitBtn = form.querySelector('button[type="submit"]');
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
-
-      setTimeout(() => {
-        statusDiv.className = 'mb-4 text-sm text-green-400 bg-green-400/10 border border-green-400/30 rounded-lg p-3';
-        statusDiv.textContent = '✓ Mensaje enviado exitosamente.';
-        statusDiv.style.display = 'block';
-        form.reset();
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar';
-
-        setTimeout(() => {
-          statusDiv.style.display = 'none';
-        }, 4000);
-      }, 800);
-    }
-
     window.elementSdk.init({
       defaultConfig,
       onConfigChange: async (config) => {
         const name = config.studio_name || defaultConfig.studio_name;
+        const title = config.hero_title || defaultConfig.hero_title;
+        const desc = config.hero_description || defaultConfig.hero_description;
         const email = config.contact_email || defaultConfig.contact_email;
-        const whatsapp = config.contact_whatsapp || defaultConfig.contact_whatsapp;
-        const discord = config.contact_discord || defaultConfig.contact_discord;
         const bg = config.background_color || defaultConfig.background_color;
         const card = config.card_color || defaultConfig.card_color;
         const text = config.text_color || defaultConfig.text_color;
+        const accent = config.accent_color || defaultConfig.accent_color;
         const muted = config.muted_text_color || defaultConfig.muted_text_color;
         const font = config.font_family || defaultConfig.font_family;
         const size = config.font_size || defaultConfig.font_size;
 
         document.getElementById('nav-name').textContent = name;
         document.getElementById('footer-name').textContent = name;
-
-        const emailLink = document.getElementById('contact-email-link');
-        if (emailLink) {
-          emailLink.textContent = email + ' →';
-          emailLink.href = 'mailto:' + email;
-        }
-
-        const whatsappLink = document.getElementById('contact-whatsapp-link');
-        if (whatsappLink) {
-          whatsappLink.textContent = whatsapp + ' →';
-          whatsappLink.href = 'https://wa.me/' + whatsapp.replace(/\D/g, '');
-        }
-
-        const discordLink = document.getElementById('contact-discord-link');
-        if (discordLink) {
-          discordLink.href = discord;
-        }
+        document.getElementById('hero-title').textContent = title;
+        document.getElementById('hero-desc').textContent = desc;
+        document.getElementById('contact-email').textContent = email;
 
         const app = document.getElementById('app');
         app.style.backgroundColor = bg;
@@ -200,11 +208,9 @@
         ['studio_name', config.studio_name || defaultConfig.studio_name],
         ['hero_title', config.hero_title || defaultConfig.hero_title],
         ['hero_description', config.hero_description || defaultConfig.hero_description],
-        ['contact_email', config.contact_email || defaultConfig.contact_email],
-        ['contact_whatsapp', config.contact_whatsapp || defaultConfig.contact_whatsapp],
-        ['contact_discord', config.contact_discord || defaultConfig.contact_discord]
+        ['contact_email', config.contact_email || defaultConfig.contact_email]
       ])
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f533ef903f6b491',t:'MTc3NzY4NTI3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f531f73f468484e',t:'MTc3NzY4Mzk4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
