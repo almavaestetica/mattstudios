@@ -33,17 +33,18 @@
   <style>body { box-sizing: border-box; }</style>
  </head>
  <body class="h-full">
-  <div id="app" class="w-full h-full overflow-auto bg-[#0a0a0f] text-white bg-grid"><!-- Navbar -->
+  <div id="app" class="w-full h-full overflow-auto bg-[#0a0a0f] text-white bg-grid">
+   <!-- Navbar -->
    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-[#0a0a0f]/80 border-b border-purple-500/10">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-     <div class="flex items-center gap-3">
-      <img src="logo.png" alt="MattStudios Logo" class="w-9 h-9 rounded-lg object-cover"> <span id="nav-name" class="font-bold text-lg">MattStudios</span>
+     <div class="flex items-center gap-3"><img src="logo.png" alt="MattStudios Logo" class="w-9 h-9 rounded-lg object-cover"> <span id="nav-name" class="font-bold text-lg">MattStudios</span>
      </div>
-     <a href="https://mattstudios.lat" class="hover:text-purple-400 transition opacity-0 animate-fade-in">Inicio</a> <a href="https://mattstudios.lat/anuncios" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.1s">Anuncios</a> <a href="https://mattstudios.lat/acerca-de" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.2s">Experiencia</a> <a href="https://mattstudios.lat/contacto" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.3s">Contacto</a>
+     <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+      <a href="https://mattstudios.lat" class="hover:text-purple-400 transition opacity-0 animate-fade-in">Inicio</a> <a href="https://mattstudios.lat/anuncios" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.1s">Anuncios</a> <a href="https://mattstudios.lat/acerca-de" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.2s">Experiencia</a> <a href="https://mattstudios.lat/contact" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.3s">Contacto</a>
      </div>
     </div>
    </nav><!-- Determinar qué página mostrar -->
-   <div id="page-router"><!-- Anuncios Page -->
+   <div id="page-router">
 <!-- Contacto Page -->
 <section id="contact" class="min-h-[100%] py-24 px-6">
   <div class="max-w-4xl mx-auto">
@@ -61,7 +62,7 @@
         <div class="text-3xl mb-3">📱</div>
         <h3 class="font-bold text-lg mb-2">WhatsApp</h3>
         <p class="text-gray-500 text-sm mb-4">Contáctanos rápidamente</p>
-        <a href="https://wa.me/51977470675" target="_blank"
+        <a href="https://wa.me/977470675" target="_blank"
           class="inline-block px-4 py-2 rounded-lg bg-green-600/20 text-green-300 hover:bg-green-600/30 transition text-sm">
           Escribir →
         </a>
@@ -137,9 +138,11 @@
    </div><!-- Footer -->
    <footer class="border-t border-purple-500/10 py-10 px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-     <div class="flex items-center gap-3"><img src="logo.png" alt="MattStudios Logo" class="w-8 h-8 rounded-lg object-cover"> <span id="footer-name" class="font-bold">MattStudios</span>
+     <div class="flex items-center gap-3">
+      <img src="logo.png" alt="MattStudios Logo" class="w-8 h-8 rounded-lg object-cover"> <span id="footer-name" class="font-bold">MattStudios</span>
      </div>
-     <div class="flex gap-6 text-gray-500 text-sm"><a href="https://www.tiktok.com/@mattstudiomc?lang=es-419" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">TikTok</a> <a href="https://www.instagram.com/mattstudiomc/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Instagram</a> <a href="https://x.com/MattStudios22" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">X (Twitter)</a>
+     <div class="flex gap-6 text-gray-500 text-sm">
+      <a href="https://www.tiktok.com/@mattstudiomc?lang=es-419" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">TikTok</a> <a href="https://www.instagram.com/mattstudiomc/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Instagram</a> <a href="https://x.com/MattStudios22" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">X (Twitter)</a>
      </div>
     </div>
     <p class="text-center text-gray-600 text-xs mt-8">© 2025 MattStudios. Creando experiencias épicas en Minecraft desde 2022.</p>
@@ -212,5 +215,5 @@
       ])
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f531f73f468484e',t:'MTc3NzY4Mzk4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f5361aab5fe3d82',t:'MTc3NzY4NjY5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
