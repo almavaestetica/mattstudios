@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MattStudios</title>
+  <link rel="icon" type="image/x-icon" href="logo1.png">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { font-family: 'Outfit', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2); }
+    .float-anim { animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .glow-btn { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); transition: box-shadow 0.3s, transform 0.3s; }
+    .glow-btn:hover { box-shadow: 0 0 30px rgba(139, 92, 246, 0.7); transform: scale(1.05); }
+    .bg-grid { background-image: radial-gradient(circle, rgba(139,92,246,0.08) 1px, transparent 1px); background-size: 30px 30px; }
+    @keyframes fadeIn2 { from { opacity: 0; } to { opacity: 1; } }
+    .animate-fade-in { animation: fadeIn2 0.6s ease-out forwards; }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto bg-[#0a0a0f] text-white bg-grid">
+   <!-- Navbar -->
+   <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-[#0a0a0f]/80 border-b border-purple-500/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+     <div class="flex items-center gap-3"><img src="logo.png" alt="MattStudios Logo" class="w-9 h-9 rounded-lg object-cover"> <span id="nav-name" class="font-bold text-lg">MattStudios</span>
+     </div>
+     <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+      <button onclick="showPage('home')" class="hover:text-purple-400 transition">Inicio</button> <button onclick="showPage('anuncios')" class="hover:text-purple-400 transition">Anuncios</button> <button onclick="showPage('contact')" class="hover:text-purple-400 transition">Contacto</button>
+     </div>
+    </div>
+   </nav>
+   <div id="page-router">
+    <!-- Home Page -->
+    <section id="home" class="min-h-[100%] py-24 px-6">
+     <div class="max-w-4xl mx-auto text-center pt-12">
+      <h1 class="text-5xl md:text-7xl font-900 mb-6 gradient-text">Bienvenido a MattStudios</h1>
+      <p class="text-gray-400 text-lg mb-12">Creando experiencias épicas en Minecraft</p>
+     </div>
+    </section><!-- Anuncios Page -->
+    <section id="anuncios" class="min-h-[100%] py-24 px-6" style="display:none;">
+     <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-900 mb-6 gradient-text">Anuncios</h1>
+      <p class="text-gray-400 text-lg mb-12">Mantente al tanto de todos nuestros eventos y noticias.</p>
+     </div>
+    </section><!-- Contact Page -->
+    <section id="contact" class="min-h-[100%] py-24 px-6" style="display:none;">
+     <div class="max-w-2xl mx-auto pt-12">
+      <h1 class="text-5xl md:text-6xl font-900 mb-6 gradient-text">Contacto</h1>
+      <p class="text-gray-400 text-lg mb-12">¿Tienes preguntas? Contáctanos por cualquiera de estos medios.</p><!-- Contactos -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12"><a id="email-card" href="mailto:mattnetwork.oficial@gmail.com" class="bg-[#12121a] border border-purple-500/20 rounded-xl p-6 card-hover text-center hover:border-purple-500/40 transition"> <i data-lucide="mail" class="w-8 h-8 text-purple-400 mx-auto mb-3"></i> <h3 class="font-800 text-lg mb-2">Email</h3><p id="email-text" class="text-gray-400 text-sm break-all">mattnetwork.oficial@gmail.com</p></a> <a id="whatsapp-card" href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="bg-[#12121a] border border-purple-500/20 rounded-xl p-6 card-hover text-center hover:border-purple-500/40 transition"> <i data-lucide="phone" class="w-8 h-8 text-green-400 mx-auto mb-3"></i> <h3 class="font-800 text-lg mb-2">WhatsApp</h3><p id="whatsapp-text" class="text-gray-400 text-sm">+1234567890</p></a> <a id="discord-card" href="https://dcd.gg/mattstudios" target="_blank" rel="noopener noreferrer" class="bg-[#12121a] border border-purple-500/20 rounded-xl p-6 card-hover text-center hover:border-purple-500/40 transition"> <i data-lucide="users" class="w-8 h-8 text-indigo-400 mx-auto mb-3"></i> <h3 class="font-800 text-lg mb-2">Discord</h3><p class="text-gray-400 text-sm">Servidor Oficial</p></a>
+      </div><!-- Formulario pequeño -->
+      <div class="bg-[#12121a] border border-purple-500/20 rounded-xl p-8">
+       <h2 class="text-2xl font-800 mb-6">Formulario de Consulta</h2>
+       <form id="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="mb-4"><label for="name" class="block text-sm font-semibold mb-2">Nombre</label> <input type="text" id="name" name="name" required class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition">
+        </div>
+        <div class="mb-4"><label for="email" class="block text-sm font-semibold mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition">
+        </div>
+        <div class="mb-4"><label for="type" class="block text-sm font-semibold mb-2">Tipo</label> <select id="type" name="type" required class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500 transition"> <option value="">Selecciona...</option> <option value="asistencia">Asistencia</option> <option value="reporte">Reporte</option> <option value="otro">Otro</option> </select>
+        </div>
+        <div class="mb-4"><label for="message" class="block text-sm font-semibold mb-2">Mensaje</label> <textarea id="message" name="message" required rows="4" class="w-full bg-[#0a0a0f] border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
+        </div>
+        <div id="form-status" class="mb-4 text-sm hidden"></div><button type="submit" class="glow-btn px-6 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold text-sm w-full">Enviar</button>
+       </form>
+      </div>
+     </div>
+    </section>
+   </div>
+  </div><!-- Footer -->
+  <footer class="border-t border-purple-500/10 py-10 px-6">
+   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+     <img src="logo.png" alt="MattStudios Logo" class="w-8 h-8 rounded-lg object-cover"> <span id="footer-name" class="font-bold">MattStudios</span>
+    </div>
+    <div class="flex gap-6 text-gray-500 text-sm">
+     <a href="https://www.tiktok.com/@mattstudiomc?lang=es-419" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">TikTok</a> <a href="https://www.instagram.com/mattstudiomc/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Instagram</a> <a href="https://x.com/MattStudios22" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">X (Twitter)</a>
+    </div>
+   </div>
+   <p class="text-center text-gray-600 text-xs mt-8">© 2025 MattStudios. Creando experiencias épicas en Minecraft desde 2022.</p>
+  </footer>
+  <script>
+    lucide.createIcons();
+
+    const defaultConfig = {
+      studio_name: 'MattStudios',
+      hero_title: 'Eventos de Minecraft',
+      hero_description: 'Recreamos series y creamos eventos únicos en Minecraft con un toque especial y creativo. 3 años de experiencia transformando ideas en realidades pixeladas.',
+      contact_email: 'mattnetwork.oficial@gmail.com',
+      contact_whatsapp: '+1234567890',
+      contact_discord: 'https://dcd.gg/mattstudios',
+      background_color: '#0a0a0f',
+      card_color: '#12121a',
+      text_color: '#ffffff',
+      accent_color: '#a855f7',
+      muted_text_color: '#6b7280',
+      font_family: 'Outfit',
+      font_size: 16
+    };
+
+    function showPage(page) {
+      document.getElementById('home').style.display = page === 'home' ? 'block' : 'none';
+      document.getElementById('anuncios').style.display = page === 'anuncios' ? 'block' : 'none';
+      document.getElementById('contact').style.display = page === 'contact' ? 'block' : 'none';
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('contact-form');
+      const statusDiv = document.getElementById('form-status');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      setTimeout(() => {
+        statusDiv.className = 'mb-4 text-sm text-green-400 bg-green-400/10 border border-green-400/30 rounded-lg p-3';
+        statusDiv.textContent = '✓ Mensaje enviado exitosamente.';
+        statusDiv.style.display = 'block';
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar';
+
+        setTimeout(() => {
+          statusDiv.style.display = 'none';
+        }, 4000);
+      }, 800);
+    }
+
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => {
+        const name = config.studio_name || defaultConfig.studio_name;
+        const email = config.contact_email || defaultConfig.contact_email;
+        const whatsapp = config.contact_whatsapp || defaultConfig.contact_whatsapp;
+        const discord = config.contact_discord || defaultConfig.contact_discord;
+        const bg = config.background_color || defaultConfig.background_color;
+        const card = config.card_color || defaultConfig.card_color;
+        const text = config.text_color || defaultConfig.text_color;
+        const muted = config.muted_text_color || defaultConfig.muted_text_color;
+        const font = config.font_family || defaultConfig.font_family;
+        const size = config.font_size || defaultConfig.font_size;
+
+        document.getElementById('nav-name').textContent = name;
+        document.getElementById('footer-name').textContent = name;
+
+        const emailLink = document.getElementById('contact-email-link');
+        if (emailLink) {
+          emailLink.textContent = email + ' →';
+          emailLink.href = 'mailto:' + email;
+        }
+
+        const whatsappLink = document.getElementById('contact-whatsapp-link');
+        if (whatsappLink) {
+          whatsappLink.textContent = whatsapp + ' →';
+          whatsappLink.href = 'https://wa.me/' + whatsapp.replace(/\D/g, '');
+        }
+
+        const discordLink = document.getElementById('contact-discord-link');
+        if (discordLink) {
+          discordLink.href = discord;
+        }
+
+        const app = document.getElementById('app');
+        app.style.backgroundColor = bg;
+        app.style.color = text;
+        app.style.fontFamily = `${font}, sans-serif`;
+        app.style.fontSize = `${size}px`;
+
+        document.querySelectorAll('.bg-\\[\\#12121a\\]').forEach(el => el.style.backgroundColor = card);
+        document.querySelectorAll('.text-gray-400, .text-gray-500, .text-gray-600').forEach(el => el.style.color = muted);
+      },
+      mapToCapabilities: (config) => ({
+        recolorables: [
+          { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+          { get: () => config.card_color || defaultConfig.card_color, set: (v) => { config.card_color = v; window.elementSdk.setConfig({ card_color: v }); } },
+          { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+          { get: () => config.accent_color || defaultConfig.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
+          { get: () => config.muted_text_color || defaultConfig.muted_text_color, set: (v) => { config.muted_text_color = v; window.elementSdk.setConfig({ muted_text_color: v }); } }
+        ],
+        borderables: [],
+        fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+        fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+      }),
+      mapToEditPanelValues: (config) => new Map([
+        ['studio_name', config.studio_name || defaultConfig.studio_name],
+        ['hero_title', config.hero_title || defaultConfig.hero_title],
+        ['hero_description', config.hero_description || defaultConfig.hero_description],
+        ['contact_email', config.contact_email || defaultConfig.contact_email],
+        ['contact_whatsapp', config.contact_whatsapp || defaultConfig.contact_whatsapp],
+        ['contact_discord', config.contact_discord || defaultConfig.contact_discord]
+      ])
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f533ef903f6b491',t:'MTc3NzY4NTI3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
