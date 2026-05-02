@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MattStudios</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { font-family: 'Outfit', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2); }
+    .float-anim { animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .glow-btn { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); transition: box-shadow 0.3s, transform 0.3s; }
+    .glow-btn:hover { box-shadow: 0 0 30px rgba(139, 92, 246, 0.7); transform: scale(1.05); }
+    .bg-grid { background-image: radial-gradient(circle, rgba(139,92,246,0.08) 1px, transparent 1px); background-size: 30px 30px; }
+    @keyframes fadeIn2 { from { opacity: 0; } to { opacity: 1; } }
+    .animate-fade-in { animation: fadeIn2 0.6s ease-out forwards; }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto bg-[#0a0a0f] text-white bg-grid">
+   <!-- Navbar -->
+   <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-[#0a0a0f]/80 border-b border-purple-500/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+     <div class="flex items-center gap-3"><img src="logo.png" alt="MattStudios Logo" class="w-9 h-9 rounded-lg object-cover"> <span id="nav-name" class="font-bold text-lg">MattStudios</span>
+     </div>
+     <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+      <a href="https://mattstudios.lat" class="hover:text-purple-400 transition opacity-0 animate-fade-in">Inicio</a> <a href="https://mattstudios.lat/servicio" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.1s">Servicios</a> <a href="https://mattstudios.lat/acerca-de" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.2s">Experiencia</a> <a href="https://mattstudios.lat/contact" class="hover:text-purple-400 transition opacity-0 animate-fade-in" style="animation-delay: 0.3s">Contacto</a>
+     </div>
+    </div>
+   </nav><!-- Determinar qué página mostrar -->
+   <div id="page-router">
+    <!-- Acerca de Nosotros Page -->
+    <section id="acerca-de" class="min-h-[100%] py-24 px-6">
+     <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-900 mb-6 gradient-text">Acerca de Nosotros</h1>
+      <p class="text-gray-400 text-lg mb-12 leading-relaxed">Somos MattStudios, un equipo apasionado por crear experiencias épicas e inolvidables en Minecraft. Desde 2022, hemos estado transformando ideas creativas en realidades pixeladas que dejan a nuestros jugadores con historias increíbles que contar.</p><!-- Nuestra Historia -->
+      <div class="mb-16">
+       <h2 class="text-3xl font-800 mb-6">Nuestra Historia</h2>
+       <div class="bg-[#12121a] border border-purple-500/10 rounded-2xl p-8">
+        <p class="text-gray-400 leading-relaxed mb-4">MattStudios nació de una pasión compartida: la de recrear las series más emblemáticas de Minecraft y llevar la experiencia a un nuevo nivel. Lo que comenzó como un pequeño proyecto entre amigos se convirtió en un fenómeno comunitario con cientos de jugadores participando en nuestros eventos.</p>
+        <p class="text-gray-400 leading-relaxed">Durante estos 3 años, hemos aprendido que el verdadero éxito no se mide solo en números, sino en las amistades forjadas, los momentos épicos compartidos y la diversión genuina que experimentan nuestros jugadores en cada evento.</p>
+       </div>
+      </div><!-- Nuestra Misión y Visión -->
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+       <div>
+        <h2 class="text-2xl font-800 mb-4">Nuestra Misión</h2>
+        <div class="bg-[#12121a] border border-purple-500/10 rounded-2xl p-6">
+         <p class="text-gray-400 leading-relaxed">Crear experiencias inmersivas en Minecraft que combinen creatividad, emoción y comunidad. Queremos que cada evento sea un viaje épico donde los jugadores se conviertan en protagonistas de historias inolvidables.</p>
+        </div>
+       </div>
+       <div>
+        <h2 class="text-2xl font-800 mb-4">Nuestra Visión</h2>
+        <div class="bg-[#12121a] border border-purple-500/10 rounded-2xl p-6">
+         <p class="text-gray-400 leading-relaxed">Ser reconocidos como los creadores de eventos más innovadores y emocionantes de la comunidad Minecraft hispanohablante, estableciendo nuevos estándares de calidad y creatividad en cada proyecto que realizamos.</p>
+        </div>
+       </div>
+      </div><!-- Nuestros Valores -->
+      <div class="mb-16">
+       <h2 class="text-3xl font-800 mb-6">Nuestros Valores</h2>
+       <div class="grid sm:grid-cols-2 gap-4">
+        <div class="card-hover bg-[#12121a] border border-purple-500/10 rounded-2xl p-6">
+         <div class="text-3xl mb-3">
+          🎨
+         </div>
+         <h3 class="font-bold text-lg mb-2">Creatividad</h3>
+         <p class="text-gray-500 text-sm">Innovamos constantemente para ofrecer experiencias únicas y sorprendentes.</p>
+        </div>
+        <div class="card-hover bg-[#12121a] border border-purple-500/10 rounded-2xl p-6">
+         <div class="text-3xl mb-3">
+          👥
+         </div>
+         <h3 class="font-bold text-lg mb-2">Comunidad</h3>
+         <p class="text-gray-500 text-sm">Creemos en la fuerza de la comunidad y el poder de jugar juntos.</p>
+        </div>
+        <div class="card-hover bg-[#12121a] border border-purple-500/10 rounded-2xl p-6">
+         <div class="text-3xl mb-3">
+          ⭐
+         </div>
+         <h3 class="font-bold text-lg mb-2">Excelencia</h3>
+         <p class="text-gray-500 text-sm">Nos esforzamos por la perfección en cada detalle de nuestros eventos.</p>
+        </div>
+        <div class="card-hover bg-[#12121a] border border-purple-500/10 rounded-2xl p-6">
+         <div class="text-3xl mb-3">
+          ❤️
+         </div>
+         <h3 class="font-bold text-lg mb-2">Pasión</h3>
+         <p class="text-gray-500 text-sm">Amamos lo que hacemos y eso se refleja en cada proyecto que creamos.</p>
+        </div>
+       </div>
+      </div><!-- El Equipo -->
+      <div class="mb-16">
+       <h2 class="text-3xl font-800 mb-6">Conoce al Equipo</h2>
+       <p class="text-gray-400 mb-8">Somos un equipo diverso de creativos, desarrolladores y apasionados por Minecraft que trabajan juntos para hacer realidad tus eventos.</p>
+       <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-[#12121a] border border-purple-500/10 rounded-2xl p-6 text-center">
+         <div class="text-5xl mb-4">
+          👨‍💻
+         </div>
+         <h3 class="font-bold text-lg mb-2">Desarrollo</h3>
+         <p class="text-gray-500 text-sm">Nuestros desarrolladores crean las mecánicas y sistemas que hacen posible cada evento.</p>
+        </div>
+        <div class="bg-[#12121a] border border-purple-500/10 rounded-2xl p-6 text-center">
+         <div class="text-5xl mb-4">
+          🎬
+         </div>
+         <h3 class="font-bold text-lg mb-2">Diseño</h3>
+         <p class="text-gray-500 text-sm">Nuestro equipo de diseño da vida visual a cada concepto y asegura que todo sea épico.</p>
+        </div>
+        <div class="bg-[#12121a] border border-purple-500/10 rounded-2xl p-6 text-center">
+         <div class="text-5xl mb-4">
+          🎯
+         </div>
+         <h3 class="font-bold text-lg mb-2">Gestión</h3>
+         <p class="text-gray-500 text-sm">Coordinamos cada aspecto para que tu evento sea una experiencia fluida y memorable.</p>
+        </div>
+       </div>
+      </div><!-- CTA -->
+      <div class="text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border border-purple-500/20 rounded-2xl p-8">
+       <h2 class="text-2xl font-800 mb-4">¿Quieres Ser Parte de la Aventura?</h2>
+       <p class="text-gray-400 mb-6">Únete a nuestra comunidad y experimenta eventos que cambiarán tu forma de jugar Minecraft.</p><a href="https://dcd.gg/mattstudios" target="_blank" rel="noopener noreferrer" class="inline-block glow-btn px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 font-semibold text-sm">Ir a Discord →</a>
+      </div>
+     </div>
+    </section>
+   </div><!-- Footer -->
+   <footer class="border-t border-purple-500/10 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+     <div class="flex items-center gap-3">
+      <img src="logo.png" alt="MattStudios Logo" class="w-8 h-8 rounded-lg object-cover"> <span id="footer-name" class="font-bold">MattStudios</span>
+     </div>
+     <div class="flex gap-6 text-gray-500 text-sm">
+      <a href="https://redes.com/mattstudios" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">TikTok</a> <a href="https://redes.com/mattstudios" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">Instagram</a> <a href="https://redes.com/mattstudios" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">X (Twitter)</a>
+     </div>
+    </div>
+    <p class="text-center text-gray-600 text-xs mt-8">© 2025 MattStudios. Creando experiencias épicas en Minecraft desde 2022.</p>
+   </footer>
+  </div>
+  <script>
+    lucide.createIcons();
+
+    const defaultConfig = {
+      studio_name: 'MattStudios',
+      hero_title: 'Eventos de Minecraft',
+      hero_description: 'Recreamos series y creamos eventos únicos en Minecraft con un toque especial y creativo. 3 años de experiencia transformando ideas en realidades pixeladas.',
+      contact_email: 'mattnetwork.oficial@gmail.com',
+      background_color: '#0a0a0f',
+      card_color: '#12121a',
+      text_color: '#ffffff',
+      accent_color: '#a855f7',
+      muted_text_color: '#6b7280',
+      font_family: 'Outfit',
+      font_size: 16
+    };
+
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => {
+        const name = config.studio_name || defaultConfig.studio_name;
+        const title = config.hero_title || defaultConfig.hero_title;
+        const desc = config.hero_description || defaultConfig.hero_description;
+        const email = config.contact_email || defaultConfig.contact_email;
+        const bg = config.background_color || defaultConfig.background_color;
+        const card = config.card_color || defaultConfig.card_color;
+        const text = config.text_color || defaultConfig.text_color;
+        const accent = config.accent_color || defaultConfig.accent_color;
+        const muted = config.muted_text_color || defaultConfig.muted_text_color;
+        const font = config.font_family || defaultConfig.font_family;
+        const size = config.font_size || defaultConfig.font_size;
+
+        document.getElementById('nav-name').textContent = name;
+        document.getElementById('footer-name').textContent = name;
+        document.getElementById('hero-title').textContent = title;
+        document.getElementById('hero-desc').textContent = desc;
+        document.getElementById('contact-email').textContent = email;
+
+        const app = document.getElementById('app');
+        app.style.backgroundColor = bg;
+        app.style.color = text;
+        app.style.fontFamily = `${font}, sans-serif`;
+        app.style.fontSize = `${size}px`;
+
+        document.querySelectorAll('.bg-\\[\\#12121a\\]').forEach(el => el.style.backgroundColor = card);
+        document.querySelectorAll('.text-gray-400, .text-gray-500, .text-gray-600').forEach(el => el.style.color = muted);
+      },
+      mapToCapabilities: (config) => ({
+        recolorables: [
+          { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+          { get: () => config.card_color || defaultConfig.card_color, set: (v) => { config.card_color = v; window.elementSdk.setConfig({ card_color: v }); } },
+          { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+          { get: () => config.accent_color || defaultConfig.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
+          { get: () => config.muted_text_color || defaultConfig.muted_text_color, set: (v) => { config.muted_text_color = v; window.elementSdk.setConfig({ muted_text_color: v }); } }
+        ],
+        borderables: [],
+        fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+        fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+      }),
+      mapToEditPanelValues: (config) => new Map([
+        ['studio_name', config.studio_name || defaultConfig.studio_name],
+        ['hero_title', config.hero_title || defaultConfig.hero_title],
+        ['hero_description', config.hero_description || defaultConfig.hero_description],
+        ['contact_email', config.contact_email || defaultConfig.contact_email]
+      ])
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f5318016777484e',t:'MTc3NzY4MzY3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
